@@ -19,7 +19,7 @@ offset=all_green(:,9);
 bkgstd=all_green(:,10);
 uncert=all_green(:,11);
 x_calib=((x.*transfer_mat(1,1))+(y.*transfer_mat(2,1)))+transfer_mat(3,1);
-y_calib=((y.*transfer_mat(1,2))+(y.*transfer_mat(2,2)))+transfer_mat(3,2);
+y_calib=((x.*transfer_mat(1,2))+(y.*transfer_mat(2,2)))+transfer_mat(3,2);
 z_calib=z+b;
 all_green_calib=[id,fr,x_calib,y_calib,z_calib,sig1,sig2,int,offset,bkgstd,uncert];
 save([fold_name file_name '_calib.txt'],'-ascii','-TABS','all_green_calib');
